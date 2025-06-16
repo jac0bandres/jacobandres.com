@@ -1,29 +1,36 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
-
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { useFonts, FiraMono_400Regular } from '@expo-google-fonts/fira-mono';
+import { Slot, useRouter } from 'expo-router';
+import { View, Text, TouchableOpacity } from 'react-native';
+import { styles, colors } from './styles'
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+    FiraMono_400Regular,
   });
 
-  if (!loaded) {
-    // Async font loading only occurs in development.
-    return null;
-  }
+  const router = useRouter();
+
+  if (!loaded) return null;
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    <View style={{ flex: 1, backgroundColor: colors.background }}>
+      {/* Header */}
+      <View style={{ padding: 16, flexDirection: 'row', justifyContent: 'space-between' }}>
+        <TouchableOpacity onPress={() => router.push('/')}>
+          <Text style={styles.text}>jacob andrés</Text>
+        </TouchableOpacity>
+        <View style={{ flexDirection: 'row', gap: 16 }}>
+          <TouchableOpacity onPress={() => router.push('/projects')}>
+            <Text style={{ fontSize: 16 }}>projects</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={() => router.push('/blog')}>
+            <Text style={{ fontSize: 16 }}>blog</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+
+      {/* Route content */}
+      <Slot />
+    </View>
   );
 }
