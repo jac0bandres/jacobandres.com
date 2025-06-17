@@ -7,21 +7,21 @@ import { Footer } from '../components/Footer';
 import { PaperProvider } from 'react-native-paper';
 
 export default function RootLayout() {
-  const [loaded] = useFonts({
-    FiraMono_400Regular,
-  });
+    const [loaded] = useFonts({
+        FiraMono_400Regular,
+    });
 
-  if (!loaded) return null;
+    if (!loaded) return null;
 
-  return (
-      <PaperProvider>
-      <View style={{ flex: 1, backgroundColor: colors.background, flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-    <View style={{ flex: 1, backgroundColor: colors.background, padding: 16, maxWidth: 960, width: '100%' }}>
-    <Header />
-      <Slot />
-    <Footer />
-    </View>
-    </View>
-    </PaperProvider>
-  );
+    return (
+        <PaperProvider>
+        <View style={{ flex: 1, backgroundColor: colors.background, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', overflow: 'auto'}}>
+        <View style={{ flex: 1, backgroundColor: colors.background, padding: 16, maxWidth: 960, width: '100%' }}>
+        <Header />
+        <Slot />
+        <Footer />
+        </View>
+        </View>
+        </PaperProvider>
+    );
 }

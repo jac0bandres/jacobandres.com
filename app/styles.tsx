@@ -27,7 +27,6 @@ export const styles = StyleSheet.create({
         color: colors.foreground,
         fontFamily: 'FiraMono_400Regular',
         fontSize: 20,
-        lineHeight: 28,
     },
     h1: {
         color: colors.green0,
@@ -40,6 +39,27 @@ export const styles = StyleSheet.create({
         fontFamily: 'FiraMono_400Regular',
         fontSize: 22,
         fontWeight: 'bold',
+    },
+    mdH1: {
+        color: colors.orange0,
+        fontFamily: 'FiraMono_400Regular',
+        fontSize: 32,
+        fontWeight: 'bold',
+    },
+    mdH2: {
+        color: colors.yellow0,
+        fontFamily: 'FiraMono_400Regular',
+        fontSize: 28,
+        marginVertical: 8,
+        fontWeight: 'bold',    
+    },
+    codeBlock: {
+        color: colors.green1,
+        fontFamily: 'FiraMono_400Regular',
+        fontSize: 20,
+        backgroundColor: colors.background,
+        padding: 8,
+        borderColor: colors.background
     },
     a: {
         color: colors.palette7,
