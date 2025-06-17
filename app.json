@@ -7,6 +7,11 @@
     "icon": "./assets/images/icon.png",
     "scheme": "jacobandres",
     "userInterfaceStyle": "automatic",
+    "plugins": [
+      "expo-router",
+      "react-native-paper",
+      "expo-font"
+    ],
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
