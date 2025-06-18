@@ -8,13 +8,15 @@ export function Header() {
     const pathname = usePathname()
     console.log('Current pathname:', pathname)
     return (
-      <View style={{ paddingVertical: 16, marginBottom: 32, flexDirection: 'row', justifyContent: 'space-between', alignItems: "center", 
+      <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: "center", 
           flexWrap: "wrap", maxWidth: 960, width: '100%', position: 'sticky', top: 0, zIndex: 1000, backgroundColor: venom_colors.background }}>
+      <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1,}}>
         <TouchableOpacity onPress={() => router.push('/')}>
           <Text style={styles.h1}>jacob andrés</Text>
         </TouchableOpacity>
+        </View>
         <Icons />
-        <View style={{ flexDirection: 'row', gap: 16 }}>
+        <View style={{ flexDirection: 'row', gap: 16, alignItems: 'center', flex: 1}}>
           <TouchableOpacity onPress={() => router.push('/blog')}>
             <Text style={pathname == '/blog' ? styles.aSelected : styles.a}>blog</Text>
           </TouchableOpacity>

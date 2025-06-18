@@ -14,9 +14,9 @@ export default function RootLayout() {
 
     return (
         <PaperProvider>
-        <View style={{ flex: 1, backgroundColor: venom_colors.background, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', overflow: 'auto'}}>
-        <View style={{ flex: 1, backgroundColor: venom_colors.background, padding: 16, maxWidth: 960, width: '100%' }}>
+        <View style={{ flex: 1, backgroundColor: venom_colors.background, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', overflowY: 'auto'}}>
         <Header />
+        <View style={{ flex: 1, backgroundColor: venom_colors.background, padding: 16, maxWidth: 960, width: '100%', overflowX: 'hidden',}}>
         <Slot />
         </View>
         </View>
