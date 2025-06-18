@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { View, Text, SafeAreaView, ScrollView, Pressable} from 'react-native';
 import Markdown from '@ronradtke/react-native-markdown-display'
-import { styles, colors } from './styles';
+import { styles, colors, venom_colors} from './styles';
 import { FontAwesome6 } from '@expo/vector-icons';
 
 function BlogLinks({ blogs, getBlog }) {
@@ -10,15 +10,15 @@ function BlogLinks({ blogs, getBlog }) {
     return (
         <View style={{ flexDirection: 'column', alignItems: 'flex-end'}}>
         <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, marginBottom: 8 }}>
-        <Text style={{ ...styles.a, color: colors.brown0}} onPress={() => setOpen(true)}>
+        <Text style={{ ...styles.a, color: venom_colors.bluegreen}} onPress={() => setOpen(true)}>
             {blogs.length} posts
         </Text>
-        <FontAwesome6 name={open ? "chevron-up" : "chevron-down"} size={16} color={colors.brown0} onPress={() => setOpen(!open)} />
+        <FontAwesome6 name={open ? "chevron-up" : "chevron-down"} size={16} color={venom_colors.bluegreen} onPress={() => setOpen(!open)} />
         </View>
         { open && (
-            <ScrollView style={{ maxHeight: 200, width: '100%', backgroundColor: colors.background, padding: 8}}>
+            <ScrollView style={{ maxHeight: 200, width: '100%', backgroundColor: venom_colors.background, padding: 8}}>
                 {blogs.map((blog, index) => (
-                    <Pressable onPress={() => getBlog(blog.key)} key={blog.key} style={{ padding: 8, borderBottomWidth: 1, borderBottomColor: colors.brown0 }}>
+                    <Pressable onPress={() => getBlog(blog.key)} key={blog.key} style={{ padding: 8, borderBottomWidth: 1, borderBottomColor: venom_colors.bluegreen}}>
                     <Text key={blog.key} style={styles.p}> {blog.key.replace("_", " ").replace(".md", "")} - {new Date(blog.last_modified).toLocaleDateString()}
                     </Text>
                     </Pressable>
@@ -75,8 +75,8 @@ export default function Blog() {
       </View>
       { blogContent && <Markdown
       style={{
-          heading1: {...styles.mdH1},
-          heading2: {...styles.mdH2},
+          heading1: {...styles.h1},
+          heading2: {...styles.h2},
           body: {...styles.p},
           code_block: { ...styles.codeBlock},
           fence: { ...styles.codeBlock},

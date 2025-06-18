@@ -1,9 +1,8 @@
 import { useFonts, FiraMono_400Regular } from '@expo-google-fonts/fira-mono';
 import { Slot, useRouter } from 'expo-router';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { styles, colors } from './styles'
+import { styles, colors, venom_colors} from './styles'
 import { Header } from '../components/Header';
-import { Footer } from '../components/Footer';
 import { PaperProvider } from 'react-native-paper';
 
 export default function RootLayout() {
@@ -15,11 +14,10 @@ export default function RootLayout() {
 
     return (
         <PaperProvider>
-        <View style={{ flex: 1, backgroundColor: colors.background, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', overflow: 'auto'}}>
-        <View style={{ flex: 1, backgroundColor: colors.background, padding: 16, maxWidth: 960, width: '100%' }}>
+        <View style={{ flex: 1, backgroundColor: venom_colors.background, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', overflow: 'auto'}}>
+        <View style={{ flex: 1, backgroundColor: venom_colors.background, padding: 16, maxWidth: 960, width: '100%' }}>
         <Header />
         <Slot />
-        <Footer />
         </View>
         </View>
         </PaperProvider>

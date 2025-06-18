@@ -22,60 +22,56 @@ export const colors = {
     selectionBackground: '#e5c47b',
 }
 
+export const venom_colors = {
+    background: "#000000",
+    foreground: "#c1c1c1",
+    licorice: "#211816",
+    bluegreen: "#5F8787",
+    gray: "#c1c1c1",
+    vermilion: "#FC302E",
+}
+
 export const styles = StyleSheet.create({
     p: {
-        color: colors.foreground,
+        color: venom_colors.foreground,
         fontFamily: 'FiraMono_400Regular',
         fontSize: 20,
     },
     h1: {
-        color: colors.green0,
+        color: venom_colors.vermilion,
         fontFamily: 'FiraMono_400Regular',
         fontSize: 24,
         fontWeight: 'bold',
     },
     h2: {
-        color: colors.green1,
+        color: venom_colors.gray,
         fontFamily: 'FiraMono_400Regular',
         fontSize: 22,
         fontWeight: 'bold',
     },
-    mdH1: {
-        color: colors.orange0,
-        fontFamily: 'FiraMono_400Regular',
-        fontSize: 32,
-        fontWeight: 'bold',
-    },
-    mdH2: {
-        color: colors.yellow0,
-        fontFamily: 'FiraMono_400Regular',
-        fontSize: 28,
-        marginVertical: 8,
-        fontWeight: 'bold',    
-    },
     codeBlock: {
-        color: colors.green1,
+        color: venom_colors.bluegreen,
         fontFamily: 'FiraMono_400Regular',
         fontSize: 20,
-        backgroundColor: colors.background,
+        backgroundColor: venom_colors.jet,
         padding: 8,
         borderColor: colors.background
     },
     a: {
-        color: colors.palette7,
+        color: venom_colors.bluegreen,
         fontFamily: 'FiraMono_400Regular',
         fontSize: 20,
     },
     aSelected: {
-        color: colors.orange0,
-        fontFamily: 'FiraMono_400Regular',
+        color: venom_colors.bluegreen,
+        fontFamily: 'firamono_400regular',
         fontSize: 20,
         textDecorationLine: 'underline',
     },
-    iconButton: {
+    iconbutton: {
         color: colors.foreground,
     },
     background: {
-        backgroundColor: colors.background,
+        backgroundColor: venom_colors.background,
     }
 })
